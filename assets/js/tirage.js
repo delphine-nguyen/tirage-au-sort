@@ -41,7 +41,6 @@ function logChosen(chosenStudentName, students) {
 		let student = students[index];
 		if (student.name == chosenStudentName) {
 			student.correction = true;
-			// console.log(`Logged ${chosenStudentName}`);
 		}
 	}
 }
@@ -72,11 +71,14 @@ function resetCorrection(students) {
 function createCardNames(students) {
 	const cardsSection = document.querySelector("section.cards");
 	students.forEach((student) => {
-		let card = document.createElement("article");
+		let card = document.createElement("button");
 		card.classList.add("card");
+		card.classList.add("mainBgColor");
 		card.classList.add("colorOnMainBg");
+
 		card.setAttribute("id", student.name);
 		card.innerText = student.name;
+
 		cardsSection.appendChild(card);
 	});
 }
@@ -168,6 +170,7 @@ createCardNames(students);
 
 const chooseBtn = document.querySelector("#choose");
 const resetBtn = document.querySelector("#reset");
+const cards = document.querySelector(".cards");
 
 let previousStudentName;
 
@@ -181,12 +184,13 @@ chooseBtn.addEventListener("click", () => {
 		displayChosenStudent(randomStudentName, null);
 	}
 	previousStudentName = randomStudentName;
-	console.log(students);
 });
+
+// cards.addEventListener("click", (event) => {
+//     chosenStudent = event.target.id
+
+// })
 
 resetBtn.addEventListener("click", () => {
 	resetCorrection(students);
-	if (previousStudentName) {
-		unDisplayPreviousStudent(previousStudentName);
-	}
 });
