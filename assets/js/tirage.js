@@ -32,8 +32,6 @@ function chooseRandomStudent(students) {
 	return randomStudentName;
 }
 
-function manualChoice(student) {}
-
 // Log status ==================================
 
 function logChosen(chosenStudentName, students) {
