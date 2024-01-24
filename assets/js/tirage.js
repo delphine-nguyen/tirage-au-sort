@@ -18,6 +18,7 @@ function getValidStudents(students) {
 	if (checkNeedReset(validStudents)) {
 		// Full round
 		resetCorrection(students);
+		previousStudentName = null;
 		validStudents = students;
 	}
 
@@ -191,12 +192,10 @@ cards.addEventListener("click", (event) => {
 	logChosen(chosenStudent, students);
 	displayChosenStudent(chosenStudent, previousStudentName);
 	previousStudentName = chosenStudent;
-
-	console.log(students);
 });
 
 resetBtn.addEventListener("click", () => {
 	resetCorrection(students);
-
+	previousStudentName = null;
 	console.log("==============================");
 });
