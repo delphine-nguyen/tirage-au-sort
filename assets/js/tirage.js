@@ -22,7 +22,6 @@ function getValidStudents(students) {
 		validStudents = students;
 	}
 
-	console.log(validStudents);
 	return validStudents;
 }
 
@@ -31,8 +30,6 @@ function chooseRandomStudent(students) {
 
 	let randomIndex = getRandomInt(validStudents.length - 1);
 	randomStudentName = validStudents[randomIndex].name;
-
-	console.log(randomIndex);
 
 	return randomStudentName;
 }
@@ -182,9 +179,6 @@ chooseBtn.addEventListener("click", () => {
 	logChosen(randomStudentName, students);
 	displayChosenStudent(randomStudentName, previousStudentName);
 	previousStudentName = randomStudentName;
-
-	// console.log(students);
-	// console.log(randomStudentName);
 });
 
 cards.addEventListener("click", (event) => {
@@ -197,5 +191,4 @@ cards.addEventListener("click", (event) => {
 resetBtn.addEventListener("click", () => {
 	resetCorrection(students);
 	previousStudentName = null;
-	console.log("==============================");
 });
