@@ -179,11 +179,12 @@ chooseBtn.addEventListener("click", () => {
 	previousStudentName = randomStudentName;
 
 	console.log(students);
+	console.log(randomStudentName);
 });
 
 cards.addEventListener("click", (event) => {
 	chosenStudent = event.target.id;
-	logChosen(chosenStudent);
+	logChosen(chosenStudent, students);
 	displayChosenStudent(chosenStudent, previousStudentName);
 	previousStudentName = chosenStudent;
 
