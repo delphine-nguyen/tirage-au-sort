@@ -73,7 +73,6 @@ function createCardNames(students) {
 	students.forEach((student) => {
 		let card = document.createElement("button");
 		card.classList.add("card");
-		card.classList.add("mainBgColor");
 		card.classList.add("colorOnMainBg");
 
 		card.setAttribute("id", student.name);
@@ -177,19 +176,15 @@ let previousStudentName;
 chooseBtn.addEventListener("click", () => {
 	let randomStudentName = chooseRandomStudent(students);
 	// console.log(`Chosen : ${randomStudentName}`);
-	if (previousStudentName != null) {
-		displayChosenStudent(randomStudentName, previousStudentName);
-	} else {
-		// First time choosing
-		displayChosenStudent(randomStudentName, null);
-	}
+	displayChosenStudent(randomStudentName, previousStudentName);
 	previousStudentName = randomStudentName;
 });
 
-// cards.addEventListener("click", (event) => {
-//     chosenStudent = event.target.id
-
-// })
+cards.addEventListener("click", (event) => {
+	chosenStudent = event.target.id;
+	logChosen(chosenStudent);
+	displayChosenStudent(chosenStudent, previousStudentName);
+});
 
 resetBtn.addEventListener("click", () => {
 	resetCorrection(students);
