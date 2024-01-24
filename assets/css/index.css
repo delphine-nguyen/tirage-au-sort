@@ -47,7 +47,7 @@ h1 {
 }
 
 .current {
-	background-color: green;
+	background-color: green !important;
 }
 
 .invalid {
