@@ -15,10 +15,9 @@ function getValidStudents(students) {
 		}
 	});
 
-	if (checkNeedReset(validStudents)) {
+	if (validStudents.length == 0) {
 		// Full round
 		resetCorrection(students);
-		previousStudentName = null;
 		validStudents = students;
 	}
 
@@ -47,23 +46,17 @@ function logChosen(chosenStudentName, students) {
 
 // Reset =======================================
 
-function checkNeedReset(validStudents) {
-	if (validStudents.length == 0) {
-		return true;
-	}
-	return false;
-}
-
 function resetCorrection(students) {
 	for (let index in students) {
 		let student = students[index];
 		if (student.correction == true) {
 			let studentCard = document.querySelector(`#${student.name}`);
-			resetDisplay(studentCard);
-
+			studentCard.classList.remove("invalid");
+			studentCard.classList.remove("current");
 			student.correction = false;
 		}
 	}
+	previousStudentName = null;
 }
 
 // Display ======================================
@@ -94,11 +87,6 @@ function unDisplayPreviousStudent(previousStudentName) {
 	let cardPreviousStudent = document.querySelector(`#${previousStudentName}`);
 	cardPreviousStudent.classList.remove("current");
 	cardPreviousStudent.classList.add("invalid");
-}
-
-function resetDisplay(studentCard) {
-	studentCard.classList.remove("invalid");
-	studentCard.classList.remove("current");
 }
 
 // Main ===========================================
@@ -192,5 +180,4 @@ cards.addEventListener("click", (event) => {
 
 resetBtn.addEventListener("click", () => {
 	resetCorrection(students);
-	previousStudentName = null;
 });
