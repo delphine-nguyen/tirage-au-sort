@@ -182,10 +182,12 @@ chooseBtn.addEventListener("click", () => {
 });
 
 cards.addEventListener("click", (event) => {
-	chosenStudent = event.target.id;
-	logChosen(chosenStudent, students);
-	displayChosenStudent(chosenStudent, previousStudentName);
-	previousStudentName = chosenStudent;
+	chosenStudent = event.target;
+	chosenStudentName = event.target.id;
+
+	logChosen(chosenStudentName, students);
+	displayChosenStudent(chosenStudentName, previousStudentName);
+	previousStudentName = chosenStudentName;
 });
 
 resetBtn.addEventListener("click", () => {
