@@ -58,10 +58,10 @@ function resetCorrection(students) {
 	for (let index in students) {
 		let student = students[index];
 		if (student.correction == true) {
-			student.correction = false;
-
 			let studentCard = document.querySelector(`#${student.name}`);
 			resetDisplay(studentCard);
+
+			student.correction = false;
 		}
 	}
 }
@@ -98,6 +98,7 @@ function unDisplayPreviousStudent(previousStudentName) {
 
 function resetDisplay(studentCard) {
 	studentCard.classList.remove("invalid");
+	studentCard.classList.remove("current");
 }
 
 // Main ===========================================
@@ -178,14 +179,18 @@ chooseBtn.addEventListener("click", () => {
 	// console.log(`Chosen : ${randomStudentName}`);
 	displayChosenStudent(randomStudentName, previousStudentName);
 	previousStudentName = randomStudentName;
+	console.log(students);
 });
 
 cards.addEventListener("click", (event) => {
 	chosenStudent = event.target.id;
 	logChosen(chosenStudent);
 	displayChosenStudent(chosenStudent, previousStudentName);
+	console.log(students);
 });
 
 resetBtn.addEventListener("click", () => {
 	resetCorrection(students);
+	console.log(`Previous : ${previousStudentName}`);
+	console.log(cards);
 });
