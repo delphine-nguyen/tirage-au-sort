@@ -177,6 +177,7 @@ chooseBtn.addEventListener("click", () => {
 	// console.log(`Chosen : ${randomStudentName}`);
 	displayChosenStudent(randomStudentName, previousStudentName);
 	previousStudentName = randomStudentName;
+
 	console.log(students);
 });
 
@@ -185,8 +186,12 @@ cards.addEventListener("click", (event) => {
 	logChosen(chosenStudent);
 	displayChosenStudent(chosenStudent, previousStudentName);
 	previousStudentName = chosenStudent;
+
+	console.log(students);
 });
 
 resetBtn.addEventListener("click", () => {
 	resetCorrection(students);
+
+	console.log("==============================");
 });
