@@ -8,16 +8,12 @@ function getRandomInt(max) {
 
 function getValidStudents(students) {
 	let validStudents = [];
+
 	students.forEach((student) => {
 		if (student.correction == false) {
 			validStudents.push(student);
 		}
 	});
-	return validStudents;
-}
-
-function chooseRandomStudent(students) {
-	let validStudents = getValidStudents(students);
 
 	if (checkNeedReset(validStudents)) {
 		// Full round
@@ -25,10 +21,18 @@ function chooseRandomStudent(students) {
 		validStudents = students;
 	}
 
+	console.log(validStudents);
+	return validStudents;
+}
+
+function chooseRandomStudent(students) {
+	let validStudents = getValidStudents(students);
+
 	let randomIndex = getRandomInt(validStudents.length - 1);
 	randomStudentName = validStudents[randomIndex].name;
 
-	logChosen(randomStudentName, students);
+	console.log(randomIndex);
+
 	return randomStudentName;
 }
 
@@ -174,12 +178,12 @@ let previousStudentName;
 
 chooseBtn.addEventListener("click", () => {
 	let randomStudentName = chooseRandomStudent(students);
-	// console.log(`Chosen : ${randomStudentName}`);
+	logChosen(randomStudentName, students);
 	displayChosenStudent(randomStudentName, previousStudentName);
 	previousStudentName = randomStudentName;
 
-	console.log(students);
-	console.log(randomStudentName);
+	// console.log(students);
+	// console.log(randomStudentName);
 });
 
 cards.addEventListener("click", (event) => {
