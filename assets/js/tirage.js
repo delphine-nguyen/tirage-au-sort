@@ -184,11 +184,9 @@ cards.addEventListener("click", (event) => {
 	chosenStudent = event.target.id;
 	logChosen(chosenStudent);
 	displayChosenStudent(chosenStudent, previousStudentName);
-	console.log(students);
+	previousStudentName = chosenStudent;
 });
 
 resetBtn.addEventListener("click", () => {
 	resetCorrection(students);
-	console.log(`Previous : ${previousStudentName}`);
-	console.log(cards);
 });
