@@ -64,6 +64,10 @@ h1 {
 	margin: 20px;
 }
 
+button:hover {
+	opacity: 0.6;
+}
+
 /* Colours */
 
 .mainBgColor {
