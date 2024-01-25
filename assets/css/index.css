@@ -10,6 +10,14 @@ main {
 	margin: 50px auto;
 }
 
+body {
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 1fr;
+	align-items: center;
+	align-content: center;
+}
+
 /* Titles */
 
 h1 {
@@ -24,12 +32,7 @@ h1 {
 .cards {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
-	justify-content: center;
-
-	/* display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	flex-wrap: wrap; */
+	/* justify-content: center; */
 }
 
 .card {
