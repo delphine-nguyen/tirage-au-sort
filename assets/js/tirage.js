@@ -9,12 +9,14 @@ function getRandomInt(max) {
 function getValidStudents(students) {
 	let validStudents = [];
 
+	// Select only students that have been chosen yet
 	students.forEach((student) => {
 		if (student.correction == false) {
 			validStudents.push(student);
 		}
 	});
 
+	// All students were chosen once
 	if (validStudents.length == 0) {
 		// Full round
 		resetCorrection(students);
