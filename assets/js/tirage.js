@@ -193,6 +193,6 @@ resetBtn.addEventListener("click", () => {
 			chooseBtn.classList.remove("highlight");
 			window.setTimeout(() => {
 				chooseBtn.classList.add("highlight");
-			}, 2000);
+			}, 5000);
 		});
 	});
