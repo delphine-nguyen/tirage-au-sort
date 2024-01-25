@@ -185,11 +185,14 @@ resetBtn.addEventListener("click", () => {
 });
 
 // Animations ====================================
-
-window.addEventListener("mousemove", () => {
-	window.clearTimeout();
-	chooseBtn.classList.remove("highlight");
-	window.setTimeout(() => {
-		chooseBtn.classList.add("highlight");
-	}, 5000);
-});
+"mousemove touchmove click mouseover mouseleave mouseout"
+	.split(" ")
+	.forEach((event) => {
+		window.addEventListener(event, () => {
+			window.clearTimeout();
+			chooseBtn.classList.remove("highlight");
+			window.setTimeout(() => {
+				chooseBtn.classList.add("highlight");
+			}, 2000);
+		});
+	});
