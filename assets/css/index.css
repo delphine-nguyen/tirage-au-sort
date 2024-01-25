@@ -140,7 +140,7 @@ button:hover {
 	}
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 440px) {
 	h1 {
 		font-size: 30px;
 	}
