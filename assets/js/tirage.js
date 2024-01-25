@@ -183,3 +183,13 @@ cards.addEventListener("click", (event) => {
 resetBtn.addEventListener("click", () => {
 	resetCorrection(students);
 });
+
+// Animations ====================================
+
+window.addEventListener("mousemove", () => {
+	window.clearTimeout();
+	chooseBtn.classList.remove("highlight");
+	window.setTimeout(() => {
+		chooseBtn.classList.add("highlight");
+	}, 5000);
+});

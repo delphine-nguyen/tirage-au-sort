@@ -69,6 +69,23 @@ h1 {
 	background-color: rgb(80, 77, 77);
 }
 
+.highlight {
+	background-color: rgb(207, 89, 89);
+	animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 /* Buttons */
 
 #choose,
