@@ -113,3 +113,41 @@ button:hover {
 .colorOnSecondaryBg {
 	color: white;
 }
+
+/* Media queries */
+
+@media screen and (max-width: 768px) {
+	h1 {
+		font-size: 60px;
+	}
+	.cards {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	main {
+		width: 50vw;
+	}
+}
+
+@media screen and (max-width: 515px) {
+	h1 {
+		font-size: 40px;
+	}
+	.cards {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	main {
+		width: 50vw;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	h1 {
+		font-size: 30px;
+	}
+	.cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	main {
+		width: 80vw;
+	}
+}
